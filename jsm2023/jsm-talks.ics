@@ -4,7 +4,7 @@ VERSION:2.0
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-UID:ical-19687ce8-6aef-4b6c-ad01-c66738fc922c
+UID:ical-cc9b0abc-3d16-4f75-b40d-76d73990ee8c
 DTSTART;TZID=America/New_York:20230806T160000
 DTEND;TZID=America/New_York:20230806T175000
 SUMMARY:Andrea Kaplan: An improved sampler for recursive Bayesian inference
@@ -12,7 +12,7 @@ LOCATION:CC-715A
 DESCRIPTION:Authors: Andrea Kaplan, Ian Taylor, Brenda Betancourt\nSession: <a href='https://ww2.aievolution.com/JSMAnnual/index.cfm?do=ev.viewEv&ev=2386' target='_blank'>Bayesian Computation for Streaming, Shapes, and Selection</a> (Topic-Contributed Paper Session)\nOrganizer: Maryclare Griffin; Chair: Maryclare Griffin
 END:VEVENT
 BEGIN:VEVENT
-UID:ical-47a6f2eb-3673-468f-b1a6-5c39373132e6
+UID:ical-17260705-a165-4b71-9c9a-d93cbe3ba429
 DTSTART;TZID=America/New_York:20230807T103000
 DTEND;TZID=America/New_York:20230807T122000
 SUMMARY:Shuangge Ma, Lucas Janson, Michael Law: Discussion of "JASA Theory and Methods Invited Session"
@@ -20,7 +20,7 @@ LOCATION:CC-701A
 DESCRIPTION:Authors: Shuangge Ma, Lucas Janson, Michael Law\nSession: <a href='https://ww2.aievolution.com/JSMAnnual/index.cfm?do=ev.viewEv&ev=1467' target='_blank'>JASA Theory and Methods Invited Session</a> (Invited Paper Session)\nOrganizer: Ian Mckeague; Chair: Jane-Ling Wang
 END:VEVENT
 BEGIN:VEVENT
-UID:ical-9825b3e9-aa7f-4a37-a7ef-992615014210
+UID:ical-1aedc170-de4c-4754-9531-192d6dc92cef
 DTSTART;TZID=America/New_York:20230808T083000
 DTEND;TZID=America/New_York:20230808T102000
 SUMMARY:Adel Javanmard: Precise Statistical Analysis of Classification Accuracies for Adversarial Training
@@ -28,7 +28,7 @@ LOCATION:CC-801B
 DESCRIPTION:Authors: Adel Javanmard\nSession: <a href='https://ww2.aievolution.com/JSMAnnual/index.cfm?do=ev.viewEv&ev=1696' target='_blank'>Annals of Statistics invited paper session</a> (Invited Paper Session)\nOrganizer: Enno Mammen, Lan Wang; Chair: Enno Mammen
 END:VEVENT
 BEGIN:VEVENT
-UID:ical-f55d5bad-03cd-4dc6-943a-88a448e38fda
+UID:ical-ad41aa2d-3d43-46da-9164-63f88432308a
 DTSTART;TZID=America/New_York:20230808T083000
 DTEND;TZID=America/New_York:20230808T102000
 SUMMARY:Shuangge Ma: Replicability in cancer omics data analysis: measures and empirical explorations
@@ -36,7 +36,7 @@ LOCATION:CC-714B
 DESCRIPTION:Authors: Shuangge Ma\nSession: <a href='https://ww2.aievolution.com/JSMAnnual/index.cfm?do=ev.viewEv&ev=2593' target='_blank'>Reproducibility and Replicability for Statistical Translation of Omics Data</a> (Topic-Contributed Paper Session)\nOrganizer: Li-Xuan Qin; Chair: Li-Xuan Qin
 END:VEVENT
 BEGIN:VEVENT
-UID:ical-1a2c12e0-4515-47b3-b419-fcad94b3e598
+UID:ical-84a07c0d-56ad-48d0-9664-d011106b80b1
 DTSTART;TZID=America/New_York:20230808T103000
 DTEND;TZID=America/New_York:20230808T122000
 SUMMARY:Ali Shojaie: Consistent Causal Discovery via Mixed Integer Programming
@@ -44,7 +44,7 @@ LOCATION:CC-205D
 DESCRIPTION:Authors: Ali Shojaie\nSession: <a href='https://ww2.aievolution.com/JSMAnnual/index.cfm?do=ev.viewEv&ev=1342' target='_blank'>Leo Breiman Award Lectures</a> (Invited Paper Session)\nOrganizer: Yufeng Liu; Chair: Yufeng Liu
 END:VEVENT
 BEGIN:VEVENT
-UID:ical-4132747c-51f6-47b1-9192-53d38301bf05
+UID:ical-f5a4a275-1a0f-4b31-816c-6f91cf05748f
 DTSTART;TZID=America/New_York:20230808T140000
 DTEND;TZID=America/New_York:20230808T155000
 SUMMARY:Daniela Witten: A new century of statistical inference
@@ -52,7 +52,7 @@ LOCATION:CC-718A
 DESCRIPTION:Authors: Daniela Witten\nSession: <a href='https://ww2.aievolution.com/JSMAnnual/index.cfm?do=ev.viewEv&ev=1273' target='_blank'>The Next 50 Years of Data Science</a> (Invited Paper Session)\nOrganizer: Genevera Allen; Chair: Genevera Allen
 END:VEVENT
 BEGIN:VEVENT
-UID:ical-7a1921b9-002a-4fe9-925e-866a85f6fd14
+UID:ical-725a56b4-d388-4aff-934f-9e1df6a45067
 DTSTART;TZID=America/New_York:20230809T083000
 DTEND;TZID=America/New_York:20230809T102000
 SUMMARY:Ryan Tibshirani: How many parameters does your interpolator use? Revisiting degrees of freedom in the wake of overparametrized machine learning
@@ -60,7 +60,7 @@ LOCATION:CC-714A
 DESCRIPTION:Authors: Ryan Tibshirani, Pratik Patil\nSession: <a href='https://ww2.aievolution.com/JSMAnnual/index.cfm?do=ev.viewEv&ev=2479' target='_blank'>New and Unexpected Risk Landscapes for Overparameterized Models in Machine Learning</a> (Topic-Contributed Paper Session)\nOrganizer: Yoonkyung Lee; Chair: Yoonkyung Lee
 END:VEVENT
 BEGIN:VEVENT
-UID:ical-8b5bc305-c5f4-48a3-95a3-f26f217eacde
+UID:ical-e8e25941-8d3e-4722-a3a6-db2b6c5d44c7
 DTSTART;TZID=America/New_York:20230809T083000
 DTEND;TZID=America/New_York:20230809T102000
 SUMMARY:Luo Xiao: Latent Factor Model for Multivariate Functional Data
@@ -68,7 +68,7 @@ LOCATION:CC-715B
 DESCRIPTION:Authors: Luo Xiao, Ruonan Li\nSession: <a href='https://ww2.aievolution.com/JSMAnnual/index.cfm?do=ev.viewEv&ev=2783' target='_blank'>Applied functional data analysis: new methods and novel applications</a> (Topic-Contributed Paper Session)\nOrganizer: Luo Xiao; Chair: Erjia Cui
 END:VEVENT
 BEGIN:VEVENT
-UID:ical-5687ed84-598d-4732-8ef3-512f98814b43
+UID:ical-4f296190-f14d-46d6-bb61-a4441ccfb985
 DTSTART;TZID=America/New_York:20230809T083000
 DTEND;TZID=America/New_York:20230809T102000
 SUMMARY:Lucy Gao: Inference after latent variable estimation for single-cell RNA sequencing data
@@ -76,7 +76,7 @@ LOCATION:CC-205B
 DESCRIPTION:Authors: Lucy Gao, Alexis Battle, Joshua Popp, Daniela Witten, Anna Neufeld\nSession: <a href='https://ww2.aievolution.com/JSMAnnual/index.cfm?do=ev.viewEv&ev=2873' target='_blank'>Recent Developments of Novel Statistical Methods of Analyzing Single-Cell Genomic Data for Precision Medicine and Public Health</a> (Topic-Contributed Paper Session)\nOrganizer: Aparajita Khan; Chair: Eunji Choi
 END:VEVENT
 BEGIN:VEVENT
-UID:ical-98498e02-881c-4f34-93b9-5dd717119ff7
+UID:ical-cf80e6c4-fc94-4fb9-9677-a83b92477088
 DTSTART;TZID=America/New_York:20230810T103000
 DTEND;TZID=America/New_York:20230810T122000
 SUMMARY:Arkajyoti Saha: Embarrassingly parallel large-scale spatial analysis with Nearest Neighbor Gaussian Processes using the BRISC R-package

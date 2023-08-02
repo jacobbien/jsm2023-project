@@ -608,6 +608,13 @@ litr::document() # <-- use instead of devtools::document()
 litr::add_readme("../source-files/README.Rmd")
 ```
 
+The README has an image, which we'll put in the package:
+
+```{r}
+if (!fs::dir_exists("man/figures")) fs::dir_create("man/figures")
+fs::file_copy("../source-files/ics-imported.png", "man/figures/ics-imported.png")
+```
+
 
 ## Add a pkgdown site
 

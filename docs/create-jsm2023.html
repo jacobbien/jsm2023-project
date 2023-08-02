@@ -930,6 +930,9 @@ usethis::use_import_from(&quot;Matrix&quot;, &quot;Matrix&quot;)</code></pre>
 ## ✔ Adding &#39;^README\\.Rmd$&#39; to &#39;.Rbuildignore&#39;
 ## ✔ Creating &#39;.git/hooks/&#39;
 ## ✔ Writing &#39;.git/hooks/pre-commit&#39;</code></pre>
+<p>The README has an image, which we’ll put in the package:</p>
+<pre class="r"><code>if (!fs::dir_exists(&quot;man/figures&quot;)) fs::dir_create(&quot;man/figures&quot;)
+fs::file_copy(&quot;../source-files/ics-imported.png&quot;, &quot;man/figures/ics-imported.png&quot;)</code></pre>
 </div>
 <div id="add-a-pkgdown-site" class="section level2">
 <h2>Add a pkgdown site</h2>
@@ -993,6 +996,7 @@ that we can have a link to it on our pkgdown site.</p>
 ## Copying &#39;pkgdown/favicon/favicon-32x32.png&#39; to &#39;favicon-32x32.png&#39;
 ## -- Building home ---------------------------------------------------------------
 ## Reading &#39;LICENSE.md&#39;
+## Copying &#39;man/figures/ics-imported.png&#39; to &#39;reference/figures/ics-imported.png&#39;
 ## Writing &#39;404.html&#39;
 ## -- Building function reference -------------------------------------------------
 ## Reading &#39;man/authors.Rd&#39;

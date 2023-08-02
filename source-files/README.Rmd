@@ -54,7 +54,7 @@ export_calendar_to_ics(schedule, file = "jsm-talks.ics")
 
 Once imported into Google Calendar, we get the following:
 
-<img src="https://github.com/jacobbien/jsm2023-project/blob/main/source-files/ics-imported.png" />
+<img src="man/figures/ics-imported.png" />
 
 ### About
 

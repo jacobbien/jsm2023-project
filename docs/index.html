@@ -84,32 +84,39 @@
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"jacobbien/jsm2023-project"</span>, subdir <span class="op">=</span> <span class="st">"jsm2023"</span><span class="op">)</span></span></code></pre></div>
 <p>An example of the sort of thing you can do with the package:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jacobbien/jsm2023-project/tree/main/jsm2023" class="external-link">jsm2023</a></span><span class="op">)</span></span>
-<span><span class="va">my_coauthors</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_coauthors.html">get_coauthors</a></span><span class="op">(</span><span class="st">"Jacob Bien"</span><span class="op">)</span> <span class="co"># Name as it appears in JSM program</span></span>
-<span><span class="va">people_cited_by_me</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_out_citations.html">get_out_citations</a></span><span class="op">(</span><span class="st">"Jacob Bien"</span><span class="op">)</span></span>
-<span><span class="va">people_citing_me</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_in_citations.html">get_in_citations</a></span><span class="op">(</span><span class="st">"Jacob Bien"</span><span class="op">)</span></span>
-<span><span class="va">some_people</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">my_coauthors</span>, <span class="va">people_cited_by_me</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span>, <span class="va">people_citing_me</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span><span class="op">)</span></span>
-<span><span class="va">schedule</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_talks.html">get_talks</a></span><span class="op">(</span>speakers <span class="op">=</span> <span class="va">some_people</span>, session_types <span class="op">=</span> <span class="st">"Paper"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># which of my co-authors are at JSM?</span></span>
+<span><span class="va">my_coauthors</span> <span class="op">&lt;-</span> <span class="fu">jsm2023</span><span class="fu">::</span><span class="fu"><a href="reference/get_coauthors.html">get_coauthors</a></span><span class="op">(</span><span class="st">"Jacob Bien"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># which of the people I cite the most are at JSM?</span></span>
+<span><span class="va">people_cited_by_me</span> <span class="op">&lt;-</span> <span class="fu">jsm2023</span><span class="fu">::</span><span class="fu"><a href="reference/get_out_citations.html">get_out_citations</a></span><span class="op">(</span><span class="st">"Jacob Bien"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># which of the people who cite me the most are at JSM?</span></span>
+<span><span class="va">people_citing_me</span> <span class="op">&lt;-</span> <span class="fu">jsm2023</span><span class="fu">::</span><span class="fu"><a href="reference/get_in_citations.html">get_in_citations</a></span><span class="op">(</span><span class="st">"Jacob Bien"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># when are their talks?</span></span>
+<span><span class="va">schedule</span> <span class="op">&lt;-</span> <span class="fu">jsm2023</span><span class="fu">::</span><span class="fu"><a href="reference/get_talks.html">get_talks</a></span><span class="op">(</span></span>
+<span>  speakers <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">my_coauthors</span>, <span class="va">people_cited_by_me</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">8</span><span class="op">]</span>, <span class="va">people_citing_me</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">8</span><span class="op">]</span><span class="op">)</span>,</span>
+<span>  session_types <span class="op">=</span> <span class="st">"Paper"</span>,</span>
+<span>  days <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"2023-08-08"</span>, <span class="st">"2023-08-09"</span>, <span class="st">"2023-08-10"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <p>This produces a data frame of talks:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">schedule</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">speaker</span>, <span class="va">title</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 10 × 2</span></span>
-<span><span class="co">#&gt;    speaker                                title                                 </span></span>
-<span><span class="co">#&gt;    &lt;chr&gt;                                  &lt;glue&gt;                                </span></span>
-<span><span class="co">#&gt;  1 Andrea Kaplan                          An improved sampler for recursive Bay…</span></span>
-<span><span class="co">#&gt;  2 Shuangge Ma, Lucas Janson, Michael Law Discussion of "JASA Theory and Method…</span></span>
-<span><span class="co">#&gt;  3 Adel Javanmard                         Precise Statistical Analysis of Class…</span></span>
-<span><span class="co">#&gt;  4 Shuangge Ma                            Replicability in cancer omics data an…</span></span>
-<span><span class="co">#&gt;  5 Ali Shojaie                            Consistent Causal Discovery via Mixed…</span></span>
-<span><span class="co">#&gt;  6 Daniela Witten                         A new century of statistical inference</span></span>
-<span><span class="co">#&gt;  7 Ryan Tibshirani                        How many parameters does your interpo…</span></span>
-<span><span class="co">#&gt;  8 Luo Xiao                               Latent Factor Model for Multivariate …</span></span>
-<span><span class="co">#&gt;  9 Lucy Gao                               Inference after latent variable estim…</span></span>
-<span><span class="co">#&gt; 10 Arkajyoti Saha                         Embarrassingly parallel large-scale s…</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">schedule</span>, <span class="va">speaker</span>, <span class="va">title</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 9 × 2</span></span>
+<span><span class="co">#&gt;   speaker           title                                                       </span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;             &lt;glue&gt;                                                      </span></span>
+<span><span class="co">#&gt; 1 Adel Javanmard    Precise Statistical Analysis of Classification Accuracies f…</span></span>
+<span><span class="co">#&gt; 2 Shuangge Ma       Replicability in cancer omics data analysis: measures and e…</span></span>
+<span><span class="co">#&gt; 3 Ali Shojaie       Consistent Causal Discovery via Mixed Integer Programming   </span></span>
+<span><span class="co">#&gt; 4 Daniela Witten    A new century of statistical inference                      </span></span>
+<span><span class="co">#&gt; 5 Ryan Tibshirani   How many parameters does your interpolator use? Revisiting …</span></span>
+<span><span class="co">#&gt; 6 Luo Xiao          Latent Factor Model for Multivariate Functional Data        </span></span>
+<span><span class="co">#&gt; 7 Lucy Gao          Inference after latent variable estimation for single-cell …</span></span>
+<span><span class="co">#&gt; 8 Alexandre Belloni Neighborhood Adaptive Estimators for Causal Inference under…</span></span>
+<span><span class="co">#&gt; 9 Arkajyoti Saha    Embarrassingly parallel large-scale spatial analysis with N…</span></span></code></pre></div>
 <p>See <code><a href="reference/get_talks.html">?get_talks</a></code> for the other ways you can filter talks. Finally, you can export this in the ical format, which can be imported into Google Calendar and other standard calendars:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="reference/export_calendar_to_ics.html">export_calendar_to_ics</a></span><span class="op">(</span><span class="va">schedule</span>, file <span class="op">=</span> <span class="st">"jsm-talks.ics"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">jsm2023</span><span class="fu">::</span><span class="fu"><a href="reference/export_calendar_to_ics.html">export_calendar_to_ics</a></span><span class="op">(</span><span class="va">schedule</span>, file <span class="op">=</span> <span class="st">"jsm-talks.ics"</span><span class="op">)</span></span></code></pre></div>
 <p>Once imported into Google Calendar, we get the following:</p>
 <p><img src="reference/figures/ics-imported.png"></p>
 </div>

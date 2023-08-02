@@ -20,32 +20,39 @@ remotes::install_github("jacobbien/jsm2023-project", subdir = "jsm2023")
 An example of the sort of thing you can do with the package:
 
 ``` r
-library(jsm2023)
-my_coauthors <- get_coauthors("Jacob Bien") # Name as it appears in JSM program
-people_cited_by_me <- get_out_citations("Jacob Bien")
-people_citing_me <- get_in_citations("Jacob Bien")
-some_people <- c(my_coauthors, people_cited_by_me[1:5], people_citing_me[1:5])
-schedule <- get_talks(speakers = some_people, session_types = "Paper")
+# which of my co-authors are at JSM?
+my_coauthors <- jsm2023::get_coauthors("Jacob Bien")
+
+# which of the people I cite the most are at JSM?
+people_cited_by_me <- jsm2023::get_out_citations("Jacob Bien")
+
+# which of the people who cite me the most are at JSM?
+people_citing_me <- jsm2023::get_in_citations("Jacob Bien")
+
+# when are their talks?
+schedule <- jsm2023::get_talks(
+  speakers = c(my_coauthors, people_cited_by_me[1:8], people_citing_me[1:8]),
+  session_types = "Paper",
+  days = c("2023-08-08", "2023-08-09", "2023-08-10")
+)
 ```
 
 This produces a data frame of talks:
 
 ``` r
-schedule %>%
-  dplyr::select(speaker, title)
-#> # A tibble: 10 × 2
-#>    speaker                                title                                 
-#>    <chr>                                  <glue>                                
-#>  1 Andrea Kaplan                          An improved sampler for recursive Bay…
-#>  2 Shuangge Ma, Lucas Janson, Michael Law Discussion of "JASA Theory and Method…
-#>  3 Adel Javanmard                         Precise Statistical Analysis of Class…
-#>  4 Shuangge Ma                            Replicability in cancer omics data an…
-#>  5 Ali Shojaie                            Consistent Causal Discovery via Mixed…
-#>  6 Daniela Witten                         A new century of statistical inference
-#>  7 Ryan Tibshirani                        How many parameters does your interpo…
-#>  8 Luo Xiao                               Latent Factor Model for Multivariate …
-#>  9 Lucy Gao                               Inference after latent variable estim…
-#> 10 Arkajyoti Saha                         Embarrassingly parallel large-scale s…
+dplyr::select(schedule, speaker, title)
+#> # A tibble: 9 × 2
+#>   speaker           title                                                       
+#>   <chr>             <glue>                                                      
+#> 1 Adel Javanmard    Precise Statistical Analysis of Classification Accuracies f…
+#> 2 Shuangge Ma       Replicability in cancer omics data analysis: measures and e…
+#> 3 Ali Shojaie       Consistent Causal Discovery via Mixed Integer Programming   
+#> 4 Daniela Witten    A new century of statistical inference                      
+#> 5 Ryan Tibshirani   How many parameters does your interpolator use? Revisiting …
+#> 6 Luo Xiao          Latent Factor Model for Multivariate Functional Data        
+#> 7 Lucy Gao          Inference after latent variable estimation for single-cell …
+#> 8 Alexandre Belloni Neighborhood Adaptive Estimators for Causal Inference under…
+#> 9 Arkajyoti Saha    Embarrassingly parallel large-scale spatial analysis with N…
 ```
 
 See `?get_talks` for the other ways you can filter talks. Finally, you
@@ -53,7 +60,7 @@ can export this in the ical format, which can be imported into Google
 Calendar and other standard calendars:
 
 ``` r
-export_calendar_to_ics(schedule, file = "jsm-talks.ics")
+jsm2023::export_calendar_to_ics(schedule, file = "jsm-talks.ics")
 ```
 
 Once imported into Google Calendar, we get the following:
